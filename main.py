@@ -12,19 +12,6 @@ app = Flask(__name__)
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 SPACE_ID = "Ezradesu/predictive-maintenance-gradio"
-
-# Cek dulu apakah ENV ada
-if not SUPABASE_URL or not SUPABASE_KEY:
-    raise ValueError("FATAL: SUPABASE_URL atau SUPABASE_KEY belum diset di Environment Variables.")
-
-# Inisialisasi Client
-try:
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-    gradio_client = GradioClient(SPACE_ID)
-except Exception as e:
-    print(f"Init Error: {e}")
-    # Opsional: Raise error agar deploy gagal dan kamu sadar ada masalah
-    raise e
 SENSOR_TABLE = "datasets"
 TICKET_TABLE = "failure_ticket"
 

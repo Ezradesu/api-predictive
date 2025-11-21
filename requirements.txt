@@ -1,0 +1,5 @@
+flask 
+gradio_client 
+supabase 
+pandas 
+requests

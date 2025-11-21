@@ -108,6 +108,12 @@ def process_data():
     except Exception as e:
         return jsonify({"status": "System Error", "message": str(e)}), 500
 
+
+
 @app.route('/')
 def home():
     return "Smart Maintenance Pipeline Ready."
+
+if __name__ == "__main__":
+    print("🚀 Starting Flask server...")
+    app.run(host="0.0.0.0", port=5000, debug=True)

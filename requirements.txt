@@ -3,3 +3,4 @@ gradio_client
 supabase 
 pandas 
 requests
+python-dotenv
